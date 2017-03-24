@@ -1,0 +1,19 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:f375f15d121d0f1307d8de05a12a4f75:4e648dc5792088ee8e623bf4952b469c:7950c0623daa2f65c2da97af67f76a9f$
+#
+:format=40300
+:texture=Cupcakes.png
+:size=512x512
+:pivotpoints=enabled
+:borders=disabled
+
+Cupcake00;1;118;102;129; 0.5;0.5; 0;0;0;0
+Cupcake01;105;382;101;129; 0.5;0.5; 0;0;0;0
+Cupcake02;1;381;102;130; 0.5;0.5; 0;0;0;0
+Cupcake03;1;249;102;130; 0.5;0.5; 0;0;0;0
+Cupcake04;208;382;101;129; 0.5;0.5; 0;0;0;0
