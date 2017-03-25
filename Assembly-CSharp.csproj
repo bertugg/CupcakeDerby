@@ -46,11 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\CameraController.cs" />
      <Compile Include="Assets\_Scripts\CupcakeController.cs" />
      <Compile Include="Assets\_Scripts\DepthSortController.cs" />
      <Compile Include="Assets\_Scripts\Enums.cs" />
      <Compile Include="Assets\_Scripts\GUIManager.cs" />
      <Compile Include="Assets\_Scripts\PlayMusic.cs" />
+     <Compile Include="Assets\_Scripts\SelectPlayer.cs" />
      <Compile Include="Assets\_Scripts\SetAudioLevels.cs" />
      <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
  <Reference Include="UnityEngine.UI">

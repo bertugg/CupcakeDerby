@@ -3,44 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectPlayer : MonoBehaviour {
-	
-	public GameObject player1Joined;
-	public GameObject player1Press;
+	[SerializeField]
+	private GameObject player1Joined;
+	[SerializeField]
+	private GameObject player1Press;
 
-	public GameObject player2Joined;
-	public GameObject player2Press;
+	[SerializeField]
+	private GameObject player2Joined;
+	[SerializeField]
+	private GameObject player2Press;
 
-	public GameObject player3Joined;
-	public GameObject player3Press;
+	[SerializeField]
+	private GameObject player3Joined;
+	[SerializeField]
+	private GameObject player3Press;
 
-	public GameObject player4Joined;
-	public GameObject player4Press;
+	[SerializeField]
+	private GameObject player4Joined;
+	[SerializeField]
+	private GameObject player4Press;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	[HideInInspector]
+	public List<int> joinedPlayers;
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+	public void PlayerJoined(int playerNumber)
+	{
+		Debug.Log (playerNumber + " joined!");
+		switch (playerNumber) {
+		case 1:
 			player1Joined.SetActive (true);
 			player1Press.SetActive (false);
-		}	
-
-		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+			joinedPlayers.Add (1);
+			break;
+		case 2:
 			player2Joined.SetActive (true);
 			player2Press.SetActive (false);
-		}
-
-		if (Input.GetKeyDown(KeyCode.Alpha3)) {
+			joinedPlayers.Add (2);
+			break;
+		case 3:
 			player3Joined.SetActive (true);
 			player3Press.SetActive (false);
-		}
-
-		if (Input.GetKeyDown(KeyCode.Alpha4)) {
+			joinedPlayers.Add (3);
+			break;
+		case 4:
 			player4Joined.SetActive (true);
 			player4Press.SetActive (false);
+			joinedPlayers.Add (4);
+			break;
+		default:
+			break;
 		}
 	}
 }

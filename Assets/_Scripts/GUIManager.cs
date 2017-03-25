@@ -16,6 +16,7 @@ public class GUIManager : MonoBehaviour {
 	private GameObject continueButton;
 	[SerializeField]
 	private GameObject playButton;
+	private SelectPlayer playerSelectionScript;
 
 	void Awake()
 	{
@@ -42,6 +43,28 @@ public class GUIManager : MonoBehaviour {
 
 	void Update()
 	{
+		if (PlayerSelectionPanel.gameObject.activeInHierarchy) {
+			if (Input.GetKeyUp(KeyCode.Alpha1)) {
+				playerSelectionScript.PlayerJoined (1);
+			}	
+
+			else if (Input.GetKeyUp(KeyCode.Alpha2)) {
+				playerSelectionScript.PlayerJoined (2);
+			}
+
+			else if (Input.GetKeyUp(KeyCode.Alpha3)) {
+				playerSelectionScript.PlayerJoined (3);
+			}
+
+			else if (Input.GetKeyUp(KeyCode.Alpha4)) {
+				playerSelectionScript.PlayerJoined (4);
+			}
+			else if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
+			{
+				HidePanel (PanelType.PlayerSelection);
+				OpenScene ("GameScene");
+			}
+		}
 		if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
 		{
 			ShowPanel(PanelType.Pause);
@@ -53,7 +76,6 @@ public class GUIManager : MonoBehaviour {
 		Time.timeScale = 1f;
 		HidePanel (PanelType.MainMenu);
 		ShowPanel (PanelType.PlayerSelection);
-		//OpenScene ("GameScene");
     }
 	public void OnExitButton()
 	{
@@ -92,8 +114,10 @@ public class GUIManager : MonoBehaviour {
 			}
 				break;
 		case PanelType.PlayerSelection:
-			if (PlayerSelectionPanel != null)
+			if (PlayerSelectionPanel != null) {
 				PlayerSelectionPanel.gameObject.SetActive (true);
+				playerSelectionScript = PlayerSelectionPanel.GetComponent<SelectPlayer> ();
+			}
 			break;
 		default:
 			break;
@@ -111,6 +135,9 @@ public class GUIManager : MonoBehaviour {
 		case PanelType.Pause:
 			Time.timeScale = 1f;
 			PausePanel.gameObject.SetActive (false);
+			break;
+		case PanelType.PlayerSelection:
+			PlayerSelectionPanel.gameObject.SetActive (false);
 			break;
 		default:
 			break;

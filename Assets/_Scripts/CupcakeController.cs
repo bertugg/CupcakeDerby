@@ -45,13 +45,12 @@ public class CupcakeController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (protectionTime > 0) {
-//			Debug.Log ("Immune");
+			// Debug.Log ("Immune");
+			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 		}
 		else if (other.transform.tag == "CUPCAKE") {
-			float damage = calculateDamage (other);
-			if (damage < 0)
-				GetComponentInChildren<SpriteRenderer> ().color = Color.red;
-			protectionTime = 0.5f; // Protect character for continuous collisions
+			//protectionTime = 0.5f; // Protect character for continuous collisions
+			calculateDamage(other);
 		}
 		else
 		{
@@ -76,9 +75,16 @@ public class CupcakeController : MonoBehaviour {
 		*/
 
 		float damage = 0f;
-		Vector3 projectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
-		damage = projectionVector.magnitude;
-		Debug.Log (damage);
+		Vector3 enemyProjectionVector = Vector3.Project (contactRigidbody.velocity, other.contacts [0].normal);
+		Vector3 ourProjectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
+		damage = enemyProjectionVector.magnitude - ourProjectionVector.magnitude;
+		Debug.Log ("Normal: " + other.contacts [0].normal);
+		Debug.Log ("Enemy Vector: " + enemyProjectionVector + " Our Vector: " + ourProjectionVector);
+		//if(damage > minDamage)
+		if (damage > 0f) {
+			Debug.Log (this.gameObject.name + " received " + damage);
+			//protectionTime = 0.5f;
+		}
 		return damage;
 	}
 
