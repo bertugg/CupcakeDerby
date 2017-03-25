@@ -10,6 +10,10 @@ TextureImporter:
     21300006: ButtonOptionsSelected
     21300008: ButtonPlay
     21300010: ButtonPlaySelected
+    21300012: Quit
+    21300014: QuitSelected
+    21300016: Return
+    21300018: ReturnSelected
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -72,7 +76,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 339
+        y: 223
         width: 146
         height: 56
       alignment: 0
@@ -84,8 +88,8 @@ TextureImporter:
       name: ButtonExitSelected
       rect:
         serializedVersion: 2
-        x: 149
-        y: 339
+        x: 1
+        y: 165
         width: 146
         height: 56
       alignment: 0
@@ -139,6 +143,58 @@ TextureImporter:
         x: 273
         y: 397
         width: 159
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Quit
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 337
+        width: 149
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QuitSelected
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 277
+        width: 149
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Return
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 339
+        width: 259
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ReturnSelected
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 281
+        width: 259
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

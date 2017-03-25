@@ -2,40 +2,106 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GUIManager : MonoBehaviour {
+	public Image fadeImage;
 
 	public GameObject MainPanel;
 	public GameObject PlayerSelectionPanel;
-	private int selectedItemNumber;
+	public GameObject PausePanel;
+	public GameObject OptionsPanel;
+
+	[SerializeField]
+	private GameObject continueButton;
+	[SerializeField]
+	private GameObject playButton;
+
+	void Awake()
+	{
+		if (GameObject.FindObjectsOfType<Canvas>().Length > 1)
+			Destroy (this.gameObject); // Destroy extra canvases
+		else {
+			DontDestroyOnLoad (this.gameObject);
+			DontDestroyOnLoad (EventSystem.current.gameObject);
+			ShowPanel (PanelType.MainMenu);
+		}
+	}
+
+	void Update()
+	{
+		if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
+		{
+			ShowPanel(PanelType.Pause);
+		}
+	}
 
     public void OnPlayButton()
     {
-		OpenGameScene ();
+		Time.timeScale = 1f;
+		HidePanel (PanelType.MainMenu);
+		OpenScene ("GameScene");
 		//ShowPlayerSelectionPanel ();
     }
 	public void OnExitButton()
 	{
 		Application.Quit ();
 	}
-	public void BackButtonPressed()
+	public void OnBackButton()
 	{
-		ShowMainPanel ();
+		Time.timeScale = 1f;
+		HidePanel (PanelType.Pause);
+		OpenScene ("MenuScene");
+		ShowPanel (PanelType.MainMenu);
 	}
-	public void ShowMainPanel()
+	public void OnContinueButton()
 	{
-		
+		Time.timeScale = 1f;
+		HidePanel (PanelType.Pause);
 	}
-	private void ShowPlayerSelectionPanel()
+	public void ShowPanel(PanelType panelType)
 	{
-		
+		switch (panelType) {
+		case PanelType.MainMenu:
+			if (MainPanel != null) {
+				MainPanel.gameObject.SetActive (true);
+				EventSystem.current.SetSelectedGameObject (playButton, new BaseEventData (EventSystem.current));
+			}
+				break;
+			case PanelType.Options:
+				if (OptionsPanel != null)
+					OptionsPanel.gameObject.SetActive (true);
+				break;
+		case PanelType.Pause:
+			if (PausePanel != null && SceneManager.GetActiveScene().name == "GameScene") {
+				PausePanel.gameObject.SetActive (true);
+				EventSystem.current.SetSelectedGameObject (continueButton, new BaseEventData (EventSystem.current));
+				Time.timeScale = 0f;
+			}
+				break;
+		default:
+				break;
+		}
 	}
-	public static void OpenGameScene()
+	public void HidePanel(PanelType panelType)
 	{
-		SceneManager.LoadScene ("GameScene");
+		switch (panelType) {
+		case PanelType.MainMenu:
+			MainPanel.gameObject.SetActive (false);
+			break;
+		case PanelType.Options:
+			OptionsPanel.gameObject.SetActive (false);
+			break;
+		case PanelType.Pause:
+			Time.timeScale = 1f;
+			PausePanel.gameObject.SetActive (false);
+			break;
+		default:
+			break;
+		}
 	}
-	public static void OpenMainMenu()
+	public void OpenScene(string sceneName)
 	{
-		SceneManager.LoadScene ("MenuScene");
+		SceneManager.LoadScene (sceneName);
 	}
 }

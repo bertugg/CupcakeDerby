@@ -48,7 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\CupcakeController.cs" />
      <Compile Include="Assets\_Scripts\DepthSortController.cs" />
+     <Compile Include="Assets\_Scripts\Enums.cs" />
      <Compile Include="Assets\_Scripts\GUIManager.cs" />
+     <Compile Include="Assets\_Scripts\PlayMusic.cs" />
+     <Compile Include="Assets\_Scripts\SetAudioLevels.cs" />
      <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

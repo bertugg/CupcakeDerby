@@ -203,6 +203,10 @@
             <key type="filename">../../Texturepacker/UI/ButtonOptionsSelected.png</key>
             <key type="filename">../../Texturepacker/UI/ButtonPlay.png</key>
             <key type="filename">../../Texturepacker/UI/ButtonPlaySelected.png</key>
+            <key type="filename">../../Texturepacker/UI/Quit.png</key>
+            <key type="filename">../../Texturepacker/UI/QuitSelected.png</key>
+            <key type="filename">../../Texturepacker/UI/Return.png</key>
+            <key type="filename">../../Texturepacker/UI/ReturnSelected.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
