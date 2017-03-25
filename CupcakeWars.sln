@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{A9C8102D-3CBC-CE0D-0A1C-3D2DF07121F8}") = "CupcakeWars", "Assembly-CSharp.csproj", "{DBB3612B-D3EA-98F2-2F9E-BD4B99B725B0}"
 EndProject
+Project("{A9C8102D-3CBC-CE0D-0A1C-3D2DF07121F8}") = "CupcakeWars", "Assembly-CSharp-Editor.csproj", "{55DBF2E4-E5BB-6692-241A-D41D3D559A1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{DBB3612B-D3EA-98F2-2F9E-BD4B99B725B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBB3612B-D3EA-98F2-2F9E-BD4B99B725B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB3612B-D3EA-98F2-2F9E-BD4B99B725B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DBF2E4-E5BB-6692-241A-D41D3D559A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DBF2E4-E5BB-6692-241A-D41D3D559A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DBF2E4-E5BB-6692-241A-D41D3D559A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DBF2E4-E5BB-6692-241A-D41D3D559A1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
