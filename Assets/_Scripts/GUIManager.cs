@@ -20,11 +20,23 @@ public class GUIManager : MonoBehaviour {
 	void Awake()
 	{
 		if (GameObject.FindObjectsOfType<Canvas>().Length > 1)
+		{
 			Destroy (this.gameObject); // Destroy extra canvases
-		else {
+		}
+		else
+		{
 			DontDestroyOnLoad (this.gameObject);
 			DontDestroyOnLoad (EventSystem.current.gameObject);
+		}
+		switch (SceneManager.GetActiveScene ().name) {
+		case "MenuScene":
 			ShowPanel (PanelType.MainMenu);
+			break;
+		case "GameScene":
+			break;
+		case "SelectionScene":
+			ShowPanel (PanelType.PlayerSelection);
+			break;
 		}
 	}
 
@@ -40,8 +52,8 @@ public class GUIManager : MonoBehaviour {
     {
 		Time.timeScale = 1f;
 		HidePanel (PanelType.MainMenu);
-		OpenScene ("GameScene");
-		//ShowPlayerSelectionPanel ();
+		ShowPanel (PanelType.PlayerSelection);
+		//OpenScene ("GameScene");
     }
 	public void OnExitButton()
 	{
@@ -79,8 +91,12 @@ public class GUIManager : MonoBehaviour {
 				Time.timeScale = 0f;
 			}
 				break;
+		case PanelType.PlayerSelection:
+			if (PlayerSelectionPanel != null)
+				PlayerSelectionPanel.gameObject.SetActive (true);
+			break;
 		default:
-				break;
+			break;
 		}
 	}
 	public void HidePanel(PanelType panelType)
