@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 78ab37301a3d68645abcf595d3be1cfa
+timeCreated: 1490435536
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Honeybee
+  fontNames:
+  - Honeybee
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
