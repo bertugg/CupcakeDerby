@@ -44,12 +44,11 @@ public class CupcakeController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.DrawRay (other.contacts [0].point, other.contacts [0].normal, Color.red);
 		if (protectionTime > 0) {
-			Debug.Log ("Immune");
+//			Debug.Log ("Immune");
 		}
 		else if (other.transform.tag == "CUPCAKE") {
-			float damage = calculateDamage (other.rigidbody);
+			float damage = calculateDamage (other);
 			if (damage < 0)
 				GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 			protectionTime = 0.5f; // Protect character for continuous collisions
@@ -61,16 +60,26 @@ public class CupcakeController : MonoBehaviour {
 	}
 
 	// Returns positive value on damage
-	private float calculateDamage (Rigidbody2D contactRigidbody)
+	private float calculateDamage (Collision2D other)
 	{
+		Debug.DrawRay (other.contacts [0].point, other.contacts [0].normal, Color.red);
+
+		Rigidbody2D contactRigidbody = other.gameObject.GetComponent<Rigidbody2D> ();
+		/*
 		var impactVelocityX = _rigidbody.velocity.x - contactRigidbody.velocity.x;
-		//impactVelocityX *= Mathf.Sign(impactVelocityX);
+		impactVelocityX *= Mathf.Sign(impactVelocityX);
 		var impactVelocityY = _rigidbody.velocity.y - contactRigidbody.velocity.y;
-		//impactVelocityY *= Mathf.Sign(impactVelocityY);
+		impactVelocityY *= Mathf.Sign(impactVelocityY);
 		var impactVelocity = impactVelocityX + impactVelocityY;
 		var impactForce = impactVelocity * _rigidbody.mass * contactRigidbody.mass;
-		//impactForce *= Mathf.Sign(impactForce);
-		return impactForce;
+		impactForce *= Mathf.Sign(impactForce);
+		*/
+
+		float damage = 0f;
+		Vector3 projectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
+		damage = projectionVector.magnitude;
+		Debug.Log (damage);
+		return damage;
 	}
 
 
