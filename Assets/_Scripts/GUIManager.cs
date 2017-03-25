@@ -17,9 +17,11 @@ public class GUIManager : MonoBehaviour {
 	[SerializeField]
 	private GameObject playButton;
 	private SelectPlayer playerSelectionScript;
+	public PlayMusic musicController;
 
 	void Awake()
 	{
+		musicController = GetComponent<PlayMusic> ();
 		if (GameObject.FindObjectsOfType<Canvas>().Length > 1)
 		{
 			Destroy (this.gameObject); // Destroy extra canvases
@@ -32,8 +34,10 @@ public class GUIManager : MonoBehaviour {
 		switch (SceneManager.GetActiveScene ().name) {
 		case "MenuScene":
 			ShowPanel (PanelType.MainMenu);
+			musicController.PlaySelectedMusic (MusicType.MainMenu);
 			break;
 		case "GameScene":
+			musicController.PlaySelectedMusic (MusicType.Game);
 			break;
 		case "SelectionScene":
 			ShowPanel (PanelType.PlayerSelection);
@@ -62,6 +66,7 @@ public class GUIManager : MonoBehaviour {
 			else if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
 			{
 				HidePanel (PanelType.PlayerSelection);
+				musicController.PlaySelectedMusic (MusicType.Game);
 				OpenScene ("GameScene");
 			}
 		}
@@ -85,8 +90,8 @@ public class GUIManager : MonoBehaviour {
 	{
 		Time.timeScale = 1f;
 		HidePanel (PanelType.Pause);
-		OpenScene ("MenuScene");
 		ShowPanel (PanelType.MainMenu);
+		OpenScene ("MenuScene");
 	}
 	public void OnContinueButton()
 	{

@@ -4,21 +4,31 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:ea0478208b0099f96770e3de217ee38c:8bc35612b9a28bbe57f4918515df38e2:7950c0623daa2f65c2da97af67f76a9f$
+# $TexturePacker:SmartUpdate:e02f03324c6835a843193df767ef0740:e5b87f2d8cda82d6567920e87d9deb40:7950c0623daa2f65c2da97af67f76a9f$
 #
 :format=40300
 :texture=Cupcakes.png
-:size=1024x1024
+:size=2048x2048
 :pivotpoints=enabled
 :borders=disabled
 
-Cupcake00;105;175;102;129; 0.5;0.5; 0;0;0;0
-Cupcake01;105;44;101;129; 0.5;0.5; 0;0;0;0
-Cupcake02;1;174;102;130; 0.5;0.5; 0;0;0;0
-Cupcake03;1;42;102;130; 0.5;0.5; 0;0;0;0
-Cupcake04;208;44;101;129; 0.5;0.5; 0;0;0;0
-CupcakeCherry;1;658;230;365; 0.5;0.5; 0;0;0;0
-CupcakeChocolate;233;700;230;323; 0.5;0.5; 0;0;0;0
-CupcakeFace;209;221;91;83; 0.5;0.5; 0;0;0;0
-CupcakeHazelnut;233;382;230;316; 0.5;0.5; 0;0;0;0
-CupcakeStrawberry;1;306;230;350; 0.5;0.5; 0;0;0;0
+Cupcake00;209;113;102;129; 0.5;0.5; 0;0;0;0
+Cupcake01;313;128;101;129; 0.5;0.5; 0;0;0;0
+Cupcake02;1;112;102;130; 0.5;0.5; 0;0;0;0
+Cupcake03;105;112;102;130; 0.5;0.5; 0;0;0;0
+Cupcake04;416;128;101;129; 0.5;0.5; 0;0;0;0
+CupcakeCherry;1;1312;230;365; 0.5;0.5; 0;0;0;0
+CupcakeCherryLeft;1;948;199;362; 0.5;0.5; 0;0;0;0
+CupcakeCherryRight;1;1679;256;368; 0.5;0.5; 0;0;0;0
+CupcakeChocolate;255;635;230;323; 0.5;0.5; 0;0;0;0
+CupcakeChocolateLeft;1;244;225;340; 0.5;0.5; 0;0;0;0
+CupcakeChocolateRight;438;1009;248;316; 0.5;0.5; 0;0;0;0
+CupcakeHazelnut;465;1388;230;316; 0.5;0.5; 0;0;0;0
+CupcakeHazelnutLeft;259;1706;254;341; 0.5;0.5; 0;0;0;0
+CupcakeHazelnutRight;228;259;246;325; 0.5;0.5; 0;0;0;0
+CupcakeStrawberry;233;1327;230;350; 0.5;0.5; 0;0;0;0
+CupcakeStrawberryLeft;202;960;234;350; 0.5;0.5; 0;0;0;0
+CupcakeStrawberryRight;1;586;252;360; 0.5;0.5; 0;0;0;0
+DamagedFace;1;25;102;85; 0.5;0.5; 0;0;0;0
+HealthyFace;105;25;97;85; 0.5;0.5; 0;0;0;0
+Pupils;259;1683;72;21; 0.5;0.5; 0;0;0;0

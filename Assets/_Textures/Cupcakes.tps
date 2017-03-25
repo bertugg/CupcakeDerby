@@ -215,9 +215,17 @@
                 <false/>
             </struct>
             <key type="filename">../../Texturepacker/Ingame/CupcakeCherry.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeCherryLeft.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeCherryRight.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeChocolate.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeChocolateLeft.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeChocolateRight.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnut.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnutLeft.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnutRight.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberry.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberryLeft.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberryRight.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -230,7 +238,9 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../Texturepacker/Ingame/CupcakeFace.png</key>
+            <key type="filename">../../Texturepacker/Ingame/DamagedFace.png</key>
+            <key type="filename">../../Texturepacker/Ingame/HealthyFace.png</key>
+            <key type="filename">../../Texturepacker/Ingame/Pupils.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

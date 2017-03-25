@@ -203,10 +203,8 @@
             <key type="filename">../../Texturepacker/UI/ButtonOptionsSelected.png</key>
             <key type="filename">../../Texturepacker/UI/ButtonPlay.png</key>
             <key type="filename">../../Texturepacker/UI/ButtonPlaySelected.png</key>
-            <key type="filename">../../Texturepacker/UI/Quit.png</key>
-            <key type="filename">../../Texturepacker/UI/QuitSelected.png</key>
-            <key type="filename">../../Texturepacker/UI/Return.png</key>
-            <key type="filename">../../Texturepacker/UI/ReturnSelected.png</key>
+            <key type="filename">../../Texturepacker/UI/ButtonQuit.png</key>
+            <key type="filename">../../Texturepacker/UI/ButtonQuitSelected.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -216,6 +214,20 @@
                 <rect>256,256,512,512</rect>
                 <key>scale9Paddings</key>
                 <rect>256,256,512,512</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../Texturepacker/UI/ButtonReturn.png</key>
+            <key type="filename">../../Texturepacker/UI/ButtonReturnSelected.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>79,28,158,56</rect>
+                <key>scale9Paddings</key>
+                <rect>79,28,158,56</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

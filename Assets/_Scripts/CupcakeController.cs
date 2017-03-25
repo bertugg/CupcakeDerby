@@ -23,7 +23,7 @@ public class CupcakeController : MonoBehaviour {
 	void Update () {
 
 		if (protectionTime > 0)
-			protectionTime -= Time.deltaTime;
+			protectionTime -= Time.fixedDeltaTime;
 
 		// Character Controls
 		Vector2 _direction = GetJoystickValue ();
@@ -78,12 +78,10 @@ public class CupcakeController : MonoBehaviour {
 		Vector3 enemyProjectionVector = Vector3.Project (contactRigidbody.velocity, other.contacts [0].normal);
 		Vector3 ourProjectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
 		damage = enemyProjectionVector.magnitude - ourProjectionVector.magnitude;
-		Debug.Log ("Normal: " + other.contacts [0].normal);
-		Debug.Log ("Enemy Vector: " + enemyProjectionVector + " Our Vector: " + ourProjectionVector);
-		//if(damage > minDamage)
-		if (damage > 0f) {
+		if (enemyProjectionVector.magnitude > ourProjectionVector.magnitude) {
+			Debug.Log ("Enemy Vector: " + enemyProjectionVector.magnitude + " Our Vector: " + ourProjectionVector.magnitude);
 			Debug.Log (this.gameObject.name + " received " + damage);
-			//protectionTime = 0.5f;
+			protectionTime = 0.5f;
 		}
 		return damage;
 	}

@@ -14,6 +14,10 @@ TextureImporter:
     21300014: QuitSelected
     21300016: Return
     21300018: ReturnSelected
+    21300020: ButtonQuit
+    21300022: ButtonQuitSelected
+    21300024: ButtonReturn
+    21300026: ButtonReturnSelected
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -76,9 +80,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 223
-        width: 146
-        height: 56
+        y: 320
+        width: 117
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -88,10 +92,10 @@ TextureImporter:
       name: ButtonExitSelected
       rect:
         serializedVersion: 2
-        x: 1
-        y: 165
-        width: 146
-        height: 56
+        x: 120
+        y: 320
+        width: 117
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,9 +106,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 455
-        width: 270
-        height: 56
+        y: 468
+        width: 233
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,10 +118,10 @@ TextureImporter:
       name: ButtonOptionsSelected
       rect:
         serializedVersion: 2
-        x: 1
-        y: 397
-        width: 270
-        height: 56
+        x: 236
+        y: 468
+        width: 233
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +131,10 @@ TextureImporter:
       name: ButtonPlay
       rect:
         serializedVersion: 2
-        x: 273
-        y: 455
-        width: 159
-        height: 56
+        x: 303
+        y: 382
+        width: 121
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,21 +144,21 @@ TextureImporter:
       name: ButtonPlaySelected
       rect:
         serializedVersion: 2
-        x: 273
-        y: 397
-        width: 159
-        height: 56
+        x: 303
+        y: 340
+        width: 121
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Quit
+      name: ButtonQuit
       rect:
         serializedVersion: 2
-        x: 262
-        y: 337
+        x: 1
+        y: 364
         width: 149
         height: 58
       alignment: 0
@@ -163,11 +167,11 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: QuitSelected
+      name: ButtonQuitSelected
       rect:
         serializedVersion: 2
-        x: 262
-        y: 277
+        x: 152
+        y: 364
         width: 149
         height: 58
       alignment: 0
@@ -176,26 +180,26 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: Return
+      name: ButtonReturn
       rect:
         serializedVersion: 2
         x: 1
-        y: 339
-        width: 259
-        height: 56
+        y: 424
+        width: 212
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: ReturnSelected
+      name: ButtonReturnSelected
       rect:
         serializedVersion: 2
-        x: 1
-        y: 281
-        width: 259
-        height: 56
+        x: 215
+        y: 424
+        width: 212
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

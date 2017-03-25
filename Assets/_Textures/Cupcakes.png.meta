@@ -14,6 +14,17 @@ TextureImporter:
     21300014: CupcakeFace
     21300016: CupcakeHazelnut
     21300018: CupcakeStrawberry
+    21300020: CupcakeCherryLeft
+    21300022: CupcakeCherryRight
+    21300024: CupcakeChocolateLeft
+    21300026: CupcakeChocolateRight
+    21300028: CupcakeHazelnutLeft
+    21300030: CupcakeHazelnutRight
+    21300032: CupcakeStrawberryLeft
+    21300034: CupcakeStrawberryRight
+    21300036: DamagedFace
+    21300038: HealthyFace
+    21300040: Pupils
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -75,8 +86,8 @@ TextureImporter:
       name: Cupcake00
       rect:
         serializedVersion: 2
-        x: 105
-        y: 175
+        x: 209
+        y: 113
         width: 102
         height: 129
       alignment: 0
@@ -88,8 +99,8 @@ TextureImporter:
       name: Cupcake01
       rect:
         serializedVersion: 2
-        x: 105
-        y: 44
+        x: 313
+        y: 128
         width: 101
         height: 129
       alignment: 0
@@ -102,7 +113,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 174
+        y: 112
         width: 102
         height: 130
       alignment: 0
@@ -114,8 +125,8 @@ TextureImporter:
       name: Cupcake03
       rect:
         serializedVersion: 2
-        x: 1
-        y: 42
+        x: 105
+        y: 112
         width: 102
         height: 130
       alignment: 0
@@ -127,8 +138,8 @@ TextureImporter:
       name: Cupcake04
       rect:
         serializedVersion: 2
-        x: 208
-        y: 44
+        x: 416
+        y: 128
         width: 101
         height: 129
       alignment: 0
@@ -141,9 +152,35 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 658
+        y: 1312
         width: 230
         height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeCherryLeft
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 948
+        width: 199
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeCherryRight
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1679
+        width: 256
+        height: 368
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +190,8 @@ TextureImporter:
       name: CupcakeChocolate
       rect:
         serializedVersion: 2
-        x: 233
-        y: 700
+        x: 255
+        y: 635
         width: 230
         height: 323
       alignment: 0
@@ -163,13 +200,26 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: CupcakeFace
+      name: CupcakeChocolateLeft
       rect:
         serializedVersion: 2
-        x: 209
-        y: 221
-        width: 91
-        height: 83
+        x: 1
+        y: 244
+        width: 225
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeChocolateRight
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1009
+        width: 248
+        height: 316
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +229,36 @@ TextureImporter:
       name: CupcakeHazelnut
       rect:
         serializedVersion: 2
-        x: 233
-        y: 382
+        x: 465
+        y: 1388
         width: 230
         height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeHazelnutLeft
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1706
+        width: 254
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeHazelnutRight
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 259
+        width: 246
+        height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +268,75 @@ TextureImporter:
       name: CupcakeStrawberry
       rect:
         serializedVersion: 2
-        x: 1
-        y: 306
+        x: 233
+        y: 1327
         width: 230
         height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeStrawberryLeft
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 960
+        width: 234
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CupcakeStrawberryRight
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 586
+        width: 252
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: DamagedFace
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 25
+        width: 102
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HealthyFace
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 25
+        width: 97
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Pupils
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1683
+        width: 72
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
