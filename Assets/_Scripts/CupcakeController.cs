@@ -15,24 +15,30 @@ public class CupcakeController : MonoBehaviour {
 	private float protectionTime;
 	private string hAxisName, vAxisName;
 	private Rigidbody2D _rigidbody;
-	private GUIManager _guiManager;
+	public HPBarController _hpBar;
 	private int hitPoint;
 	private float stamina;
 	private bool boostAvailable;
+	private bool isAlive;
 
 	void Start()
 	{
+		isAlive = true;
+		hitPoint = maxHitPoint;
+		stamina = maxStamina;
 		hAxisName = "Horizontal" + playerNo;
 		vAxisName = "Vertical" + playerNo;
 		_rigidbody = GetComponent<Rigidbody2D> ();
-		_guiManager = FindObjectOfType<Canvas> ().GetComponent<GUIManager> ();
-		hitPoint = maxHitPoint;
-		stamina = maxStamina;
+
 	}
 
 	void Update () {
-
-		if (protectionTime > 0) {
+		
+		if (!isAlive) { //Player is dead
+			_hpBar.UpdateHPBar(0);
+			GetComponentInChildren<SpriteRenderer> ().color = Color.white; // Return normal color after protection has gone
+		}
+		else if (protectionTime > 0) {
 			protectionTime -= Time.fixedDeltaTime;
 			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 		}
@@ -73,29 +79,25 @@ public class CupcakeController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (protectionTime <= 0 && other.transform.tag == "CUPCAKE") {
-			hitPoint -= calculateDamage (other);
-			if (_guiManager != null)
-				_guiManager.hudController.updateHPBar(playerNo, hitPoint);
+			calculateDamage (other);
 		}
 	}
 
 	// Returns positive value on damage
 	private int calculateDamage (Collision2D other)
 	{
-		Debug.DrawRay (other.contacts [0].point, other.contacts [0].normal, Color.red);
-
-//		Rigidbody2D contactRigidbody = other.gameObject.GetComponent<Rigidbody2D> ();
-
 		if (other.rigidbody.velocity.magnitude > _rigidbody.velocity.magnitude) {
-			int hitDamage = Mathf.FloorToInt(other.rigidbody.velocity.magnitude - _rigidbody.velocity.magnitude);
+			int hitDamage = 5 + Mathf.FloorToInt(other.rigidbody.velocity.magnitude - _rigidbody.velocity.magnitude) ; // Adjust damage
 			protectionTime = 0.5f;
-			Debug.Log(string.Format("{0} received {1} damage!", gameObject.name, hitDamage));
+			hitPoint -= hitDamage;
+			Debug.Log(string.Format("{0} received {1} damage! {2} remained.", gameObject.name, hitDamage, hitPoint));
+			_hpBar.UpdateHPBar(hitPoint);
+			if (hitPoint <= 0)
+				isAlive = false;
 			return hitDamage;
 		} else {
 			return 0;
 		}
-			
-
 		/*
 		Vector3 enemyProjectionVector = Vector3.Project (contactRigidbody.velocity, other.contacts [0].normal);
 		Vector3 ourProjectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
@@ -111,7 +113,9 @@ public class CupcakeController : MonoBehaviour {
 
 	#region ControlFunctions
 	private Vector2 GetJoystickValue() {
-		return new Vector2 (GetHorizontalValue(), GetVerticalValue());
+		if(isAlive)
+			return new Vector2 (GetHorizontalValue(), GetVerticalValue());
+		return Vector2.zero;
 	}
 
 	private float GetVerticalValue() {

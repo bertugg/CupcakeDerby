@@ -21,6 +21,7 @@ TextureImporter:
     21300028: HPBarDecor
     21300030: HPBarFill
     21300032: HPBarFrame
+    21300034: HPBarFillMask
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -82,8 +83,8 @@ TextureImporter:
       name: ButtonExit
       rect:
         serializedVersion: 2
-        x: 1
-        y: 15
+        x: 377
+        y: 208
         width: 117
         height: 42
       alignment: 0
@@ -95,8 +96,8 @@ TextureImporter:
       name: ButtonExitSelected
       rect:
         serializedVersion: 2
-        x: 120
-        y: 15
+        x: 140
+        y: 53
         width: 117
         height: 42
       alignment: 0
@@ -109,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 198
+        y: 141
         width: 233
         height: 43
       alignment: 0
@@ -122,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 236
-        y: 155
+        y: 111
         width: 233
         height: 43
       alignment: 0
@@ -161,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 338
-        y: 200
+        y: 156
         width: 137
         height: 50
       alignment: 0
@@ -174,7 +175,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 59
+        y: 45
         width: 137
         height: 50
       alignment: 0
@@ -187,7 +188,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 154
+        y: 97
         width: 212
         height: 42
       alignment: 0
@@ -199,8 +200,8 @@ TextureImporter:
       name: ButtonReturnSelected
       rect:
         serializedVersion: 2
-        x: 215
-        y: 111
+        x: 1
+        y: 1
         width: 212
         height: 42
       alignment: 0
@@ -226,9 +227,22 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 243
+        y: 186
         width: 335
         height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HPBarFillMask
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 269
+        width: 374
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,7 +253,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 269
+        y: 212
         width: 374
         height: 55
       alignment: 0

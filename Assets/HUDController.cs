@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HUDController : MonoBehaviour {
 	[SerializeField]
-	private HPBarController[] hpBars;
+	public HPBarController[] hpBars;
 
 	public void createHUD(List<bool> players, int maxHP)
 	{

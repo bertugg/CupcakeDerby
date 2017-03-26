@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class GUIManager : MonoBehaviour {
 	public Image fadeImage;
@@ -20,6 +21,8 @@ public class GUIManager : MonoBehaviour {
 	private SelectPlayer playerSelectionScript;
 	public PlayMusic musicController;
 	public HUDController hudController;
+
+	public List<GameObject> cupcakes;
 
 	void Awake()
 	{
@@ -41,6 +44,7 @@ public class GUIManager : MonoBehaviour {
 		case "GameScene":
 			ShowPanel (PanelType.HudPanel);
 			musicController.PlaySelectedMusic (MusicType.Game);
+			placeCharacters ();
 			break;
 		case "SelectionScene":
 			ShowPanel (PanelType.PlayerSelection);
@@ -72,6 +76,7 @@ public class GUIManager : MonoBehaviour {
 				ShowPanel (PanelType.HudPanel);
 				musicController.PlaySelectedMusic (MusicType.Game);
 				OpenScene ("GameScene");
+				StartCoroutine(waitForSceneChanged()); // Wait for scene changing
 			}
 		}
 		if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
@@ -165,5 +170,41 @@ public class GUIManager : MonoBehaviour {
 	public void OpenScene(string sceneName)
 	{
 		SceneManager.LoadScene (sceneName);
+	}
+	private void placeCharacters()
+	{
+		for (int i = 0; i < playerSelectionScript.joinedPlayers.Count; ++i) {
+			
+			if (playerSelectionScript.joinedPlayers [i]) {
+				GameObject cupCake;
+				Debug.Log ("Placing " + i + " cupcake");
+				switch (i) {
+				case 0: // Player 1 joined
+					cupCake = Instantiate (cupcakes [i], new Vector2 (-4f, 1f), Quaternion.identity);
+					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					break;
+				case 1: // Player 2 joined
+					cupCake = Instantiate (cupcakes [i], new Vector2(4f, 1f),Quaternion.identity);
+					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					break;
+				case 2: // Player 3 joined
+					cupCake = Instantiate (cupcakes [i], new Vector2(-4f, -1f),Quaternion.identity);
+					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					break;
+				case 3: // Player 4 joined
+					cupCake = Instantiate (cupcakes [i], new Vector2(4f, -1f),Quaternion.identity);
+					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					break;
+				default:break;
+				}
+			}
+		}
+	}
+	private IEnumerator waitForSceneChanged()
+	{
+		while (SceneManager.GetActiveScene().name != "GameScene") {
+			yield return new WaitForEndOfFrame ();
+		}
+		placeCharacters ();
 	}
 }
