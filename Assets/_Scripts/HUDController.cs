@@ -8,14 +8,14 @@ public class HUDController : MonoBehaviour {
 
 	public void createHUD(List<bool> players, int maxHP)
 	{
-		for(int i = 0; i < 4; ++i)
+		for(int i = 0; i < hpBars.Length; ++i)
 		{
 			// Reset Phase
 			hpBars [i].gameObject.SetActive (false);
 			// Create Phase
 			if (players[i]) {
 				hpBars [i].gameObject.SetActive (true);
-				hpBars [i].createHPBar (maxHP, "Player " + players [i]);
+				hpBars [i].createHPBar (maxHP, "Player " + i);
 			}
 		}
 	}

@@ -32,7 +32,7 @@ public class HPBarController : MonoBehaviour {
 			_hp = _maxhp;
 		else if (_hp >= 0f)
 		{
-			Debug.Log (_hp + " / " + _maxhp);
+//			Debug.Log (_hp + " / " + _maxhp);
 			hpBarFill.fillAmount = _hp / _maxhp;
 			return hpBarFill.fillAmount;
 		}

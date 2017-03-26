@@ -15,6 +15,8 @@ public class GUIManager : MonoBehaviour {
 	public GameObject HudPanel;
 
 	[SerializeField]
+	private Sprite damagedFace;
+	[SerializeField]
 	private GameObject continueButton;
 	[SerializeField]
 	private GameObject playButton;
@@ -139,6 +141,7 @@ public class GUIManager : MonoBehaviour {
 		case PanelType.HudPanel:
 			if (HudPanel != null) {
 				HudPanel.gameObject.SetActive (true);
+				Debug.Log (playerSelectionScript.joinedPlayers);
 				hudController.createHUD (playerSelectionScript.joinedPlayers, 100);
 			}
 			break;
@@ -178,31 +181,34 @@ public class GUIManager : MonoBehaviour {
 		for (int i = 0; i < playerSelectionScript.joinedPlayers.Count; ++i) {
 			
 			if (playerSelectionScript.joinedPlayers [i]) {
-				GameObject cupCake;
+				GameObject cupCake = null;
+				CupcakeController cupcakeController = null;
+
 				Debug.Log ("Placing " + i + " cupcake");
+
 				switch (i) {
 				case 0: // Player 1 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2 (-4f, 1f), Quaternion.identity);
-					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
-					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
+					cupcakeController = cupCake.GetComponent<CupcakeController> ();
 					break;
 				case 1: // Player 2 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2(4f, 1f),Quaternion.identity);
-					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
-					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
+					cupcakeController = cupCake.GetComponent<CupcakeController> ();
 					break;
 				case 2: // Player 3 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2(-4f, -1f),Quaternion.identity);
-					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
-					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
+					cupcakeController = cupCake.GetComponent<CupcakeController> ();
 					break;
 				case 3: // Player 4 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2 (4f, -1f), Quaternion.identity);
-					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
-					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
+					cupcakeController = cupCake.GetComponent<CupcakeController> ();
 					break;
-				default:break;
+				default:
+					break;
 				}
+				cupcakeController._hpBar = hudController.hpBars [i];
+				cupcakeController.soundManager = musicController;
+				cupcakeController.sadFace = damagedFace;
 			}
 		}
 	}

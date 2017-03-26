@@ -10,11 +10,14 @@ public class CupcakeController : MonoBehaviour {
 	public float frictionConstant = .5f;
 	public int maxHitPoint = 100;
 	public int maxStamina = 100;
+	public GameObject face;
 
 	[HideInInspector]
 	public HPBarController _hpBar;
 	[HideInInspector]
 	public PlayMusic soundManager;
+	[HideInInspector]
+	public Sprite sadFace;
 
 	private Vector2 _velocity;
 	private float protectionTime;
@@ -97,10 +100,13 @@ public class CupcakeController : MonoBehaviour {
 			int hitDamage = 5 + Mathf.FloorToInt(other.rigidbody.velocity.magnitude - _rigidbody.velocity.magnitude) ; // Adjust damage
 			protectionTime = 0.5f;
 			hitPoint -= hitDamage;
-			Debug.Log(string.Format("{0} received {1} damage! {2} remained.", gameObject.name, hitDamage, hitPoint));
+//			Debug.Log(string.Format("{0} received {1} damage! {2} remained.", gameObject.name, hitDamage, hitPoint));
 			_hpBar.UpdateHPBar(hitPoint);
 			if (hitPoint <= 0)
 				isAlive = false;
+			else if (hitPoint <= Mathf.FloorToInt(maxHitPoint / 2))
+				changeFacialExpression ();
+				
 			soundManager.PlaySelectedSound (SoundType.Hit);
 			return hitDamage;
 		} else {
@@ -118,6 +124,12 @@ public class CupcakeController : MonoBehaviour {
 		*/
 	}
 
+
+	private void changeFacialExpression()
+	{
+		Debug.Log (name + "FacialChanged!");
+		face.GetComponent<SpriteRenderer>().sprite = sadFace;
+	}
 
 	#region ControlFunctions
 	private Vector2 GetJoystickValue() {

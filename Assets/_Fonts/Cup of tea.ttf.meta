@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f204d9b3d66cbfb4c8581aff0e440ab6
+timeCreated: 1490537904
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cup of tea
+  fontNames:
+  - Cup of tea
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
