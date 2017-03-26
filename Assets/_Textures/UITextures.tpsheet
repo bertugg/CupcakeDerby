@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:30891768ffecdc09ade0bf82105f5202:f3f9213cace82de4c0f8ea89a2a58c73:8e5195250b869ae970be1c6cbf3469d8$
+# $TexturePacker:SmartUpdate:1eb59e45e5229382d2ea13d4491cb078:de7006dd8b4995fd029322e6b2755564:8e5195250b869ae970be1c6cbf3469d8$
 #
 :format=40300
 :texture=UITextures.png
@@ -12,13 +12,16 @@
 :pivotpoints=enabled
 :borders=disabled
 
-ButtonExit;1;320;117;42; 0.5;0.5; 0;0;0;0
-ButtonExitSelected;120;320;117;42; 0.5;0.5; 0;0;0;0
-ButtonOptions;1;468;233;43; 0.5;0.5; 0;0;0;0
-ButtonOptionsSelected;236;468;233;43; 0.5;0.5; 0;0;0;0
-ButtonPlay;303;382;121;40; 0.5;0.5; 0;0;0;0
-ButtonPlaySelected;303;340;121;40; 0.5;0.5; 0;0;0;0
-ButtonQuit;1;364;149;58; 0.5;0.5; 0;0;0;0
-ButtonQuitSelected;152;364;149;58; 0.5;0.5; 0;0;0;0
-ButtonReturn;1;424;212;42; 0.5;0.5; 0;0;0;0
-ButtonReturnSelected;215;424;212;42; 0.5;0.5; 0;0;0;0
+ButtonExit;1;15;117;42; 0.5;0.5; 0;0;0;0
+ButtonExitSelected;120;15;117;42; 0.5;0.5; 0;0;0;0
+ButtonOptions;1;198;233;43; 0.5;0.5; 0;0;0;0
+ButtonOptionsSelected;236;155;233;43; 0.5;0.5; 0;0;0;0
+ButtonPlay;377;289;121;35; 0.5;0.5; 0;0;0;0
+ButtonPlaySelected;377;252;121;35; 0.5;0.5; 0;0;0;0
+ButtonQuit;338;200;137;50; 0.5;0.5; 0;0;0;0
+ButtonQuitSelected;1;59;137;50; 0.5;0.5; 0;0;0;0
+ButtonReturn;1;154;212;42; 0.5;0.5; 0;0;0;0
+ButtonReturnSelected;215;111;212;42; 0.5;0.5; 0;0;0;0
+HPBarDecor;1;326;415;185; 0.5;0.5; 0;0;0;0
+HPBarFill;1;243;335;24; 0.5;0.5; 0;0;0;0
+HPBarFrame;1;269;374;55; 0.5;0.5; 0;0;0;0

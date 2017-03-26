@@ -18,6 +18,9 @@ TextureImporter:
     21300022: ButtonQuitSelected
     21300024: ButtonReturn
     21300026: ButtonReturnSelected
+    21300028: HPBarDecor
+    21300030: HPBarFill
+    21300032: HPBarFrame
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -80,7 +83,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 320
+        y: 15
         width: 117
         height: 42
       alignment: 0
@@ -93,7 +96,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 120
-        y: 320
+        y: 15
         width: 117
         height: 42
       alignment: 0
@@ -106,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 468
+        y: 198
         width: 233
         height: 43
       alignment: 0
@@ -119,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 236
-        y: 468
+        y: 155
         width: 233
         height: 43
       alignment: 0
@@ -131,10 +134,10 @@ TextureImporter:
       name: ButtonPlay
       rect:
         serializedVersion: 2
-        x: 303
-        y: 382
+        x: 377
+        y: 289
         width: 121
-        height: 40
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +147,10 @@ TextureImporter:
       name: ButtonPlaySelected
       rect:
         serializedVersion: 2
-        x: 303
-        y: 340
+        x: 377
+        y: 252
         width: 121
-        height: 40
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +160,10 @@ TextureImporter:
       name: ButtonQuit
       rect:
         serializedVersion: 2
-        x: 1
-        y: 364
-        width: 149
-        height: 58
+        x: 338
+        y: 200
+        width: 137
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +173,10 @@ TextureImporter:
       name: ButtonQuitSelected
       rect:
         serializedVersion: 2
-        x: 152
-        y: 364
-        width: 149
-        height: 58
+        x: 1
+        y: 59
+        width: 137
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 424
+        y: 154
         width: 212
         height: 42
       alignment: 0
@@ -197,9 +200,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 215
-        y: 424
+        y: 111
         width: 212
         height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HPBarDecor
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 326
+        width: 415
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HPBarFill
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 243
+        width: 335
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HPBarFrame
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 269
+        width: 374
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

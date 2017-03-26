@@ -35,7 +35,6 @@ public class CupcakeController : MonoBehaviour {
 		if (_direction.y == 0f) {
 			_velocity.y *= 0.7f;
 		}
-
 	}
 
 	void FixedUpdate() {

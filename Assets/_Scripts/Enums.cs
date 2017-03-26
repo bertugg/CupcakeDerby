@@ -10,7 +10,8 @@ public enum PanelType
 	MainMenu,
 	PlayerSelection,
 	Pause,
-	Options
+	Options,
+	HudPanel
 }
 public enum MusicType
 {

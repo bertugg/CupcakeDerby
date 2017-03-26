@@ -231,6 +231,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../Texturepacker/UI/HPBarDecor.png</key>
+            <key type="filename">../../Texturepacker/UI/HPBarFill.png</key>
+            <key type="filename">../../Texturepacker/UI/HPBarFrame.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>119,54,237,109</rect>
+                <key>scale9Paddings</key>
+                <rect>119,54,237,109</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>

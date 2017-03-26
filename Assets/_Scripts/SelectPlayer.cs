@@ -24,7 +24,13 @@ public class SelectPlayer : MonoBehaviour {
 	private GameObject player4Press;
 
 	[HideInInspector]
-	public List<int> joinedPlayers;
+	public List<bool> joinedPlayers;
+
+	void Start()
+	{
+		for (int i = 0; i < 4; ++i)
+			joinedPlayers.Add (false);
+	}
 
 	public void PlayerJoined(int playerNumber)
 	{
@@ -33,22 +39,22 @@ public class SelectPlayer : MonoBehaviour {
 		case 1:
 			player1Joined.SetActive (true);
 			player1Press.SetActive (false);
-			joinedPlayers.Add (1);
+			joinedPlayers [0] = true;
 			break;
 		case 2:
 			player2Joined.SetActive (true);
 			player2Press.SetActive (false);
-			joinedPlayers.Add (2);
+			joinedPlayers [1] = true;
 			break;
 		case 3:
 			player3Joined.SetActive (true);
 			player3Press.SetActive (false);
-			joinedPlayers.Add (3);
+			joinedPlayers [2] = true;
 			break;
 		case 4:
 			player4Joined.SetActive (true);
 			player4Press.SetActive (false);
-			joinedPlayers.Add (4);
+			joinedPlayers [3] = true;
 			break;
 		default:
 			break;

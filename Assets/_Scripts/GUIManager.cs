@@ -11,6 +11,7 @@ public class GUIManager : MonoBehaviour {
 	public GameObject PlayerSelectionPanel;
 	public GameObject PausePanel;
 	public GameObject OptionsPanel;
+	public GameObject HudPanel;
 
 	[SerializeField]
 	private GameObject continueButton;
@@ -37,6 +38,7 @@ public class GUIManager : MonoBehaviour {
 			musicController.PlaySelectedMusic (MusicType.MainMenu);
 			break;
 		case "GameScene":
+			ShowPanel (PanelType.HudPanel);
 			musicController.PlaySelectedMusic (MusicType.Game);
 			break;
 		case "SelectionScene":
@@ -66,6 +68,7 @@ public class GUIManager : MonoBehaviour {
 			else if (Input.GetButton("Start1") || Input.GetButton("Start2")) 
 			{
 				HidePanel (PanelType.PlayerSelection);
+				ShowPanel (PanelType.HudPanel);
 				musicController.PlaySelectedMusic (MusicType.Game);
 				OpenScene ("GameScene");
 			}
@@ -90,6 +93,7 @@ public class GUIManager : MonoBehaviour {
 	{
 		Time.timeScale = 1f;
 		HidePanel (PanelType.Pause);
+		HidePanel (PanelType.HudPanel);
 		ShowPanel (PanelType.MainMenu);
 		OpenScene ("MenuScene");
 	}
@@ -124,6 +128,12 @@ public class GUIManager : MonoBehaviour {
 				playerSelectionScript = PlayerSelectionPanel.GetComponent<SelectPlayer> ();
 			}
 			break;
+		case PanelType.HudPanel:
+			if (HudPanel != null) {
+				HudPanel.gameObject.SetActive (true);
+				HudPanel.GetComponent<HUDController> ().createHUD (playerSelectionScript.joinedPlayers, 100);
+			}
+			break;
 		default:
 			break;
 		}
@@ -143,6 +153,9 @@ public class GUIManager : MonoBehaviour {
 			break;
 		case PanelType.PlayerSelection:
 			PlayerSelectionPanel.gameObject.SetActive (false);
+			break;		
+		case PanelType.HudPanel:
+			HudPanel.gameObject.SetActive (false);
 			break;
 		default:
 			break;
