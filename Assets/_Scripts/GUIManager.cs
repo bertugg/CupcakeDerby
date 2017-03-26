@@ -19,6 +19,7 @@ public class GUIManager : MonoBehaviour {
 	private GameObject playButton;
 	private SelectPlayer playerSelectionScript;
 	public PlayMusic musicController;
+	public HUDController hudController;
 
 	void Awake()
 	{
@@ -131,7 +132,7 @@ public class GUIManager : MonoBehaviour {
 		case PanelType.HudPanel:
 			if (HudPanel != null) {
 				HudPanel.gameObject.SetActive (true);
-				HudPanel.GetComponent<HUDController> ().createHUD (playerSelectionScript.joinedPlayers, 100);
+				hudController.createHUD (playerSelectionScript.joinedPlayers, 100);
 			}
 			break;
 		default:

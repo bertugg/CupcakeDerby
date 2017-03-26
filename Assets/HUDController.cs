@@ -14,9 +14,14 @@ public class HUDController : MonoBehaviour {
 			hpBars [i].gameObject.SetActive (false);
 			// Create Phase
 			if (players[i]) {
-				hpBars [i].createHPBar (maxHP, "Player " + players [i]);
 				hpBars [i].gameObject.SetActive (true);
+				hpBars [i].createHPBar (maxHP, "Player " + players [i]);
 			}
 		}
+	}
+	public void updateHPBar(int playerNumber, int hp)
+	{
+		if (hpBars [playerNumber].gameObject.activeSelf)
+			hpBars [playerNumber].UpdateHPBar (hp);
 	}
 }

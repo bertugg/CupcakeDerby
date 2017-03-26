@@ -4,37 +4,66 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CupcakeController : MonoBehaviour {
-	public float playerNo = 1;
-	public float speed = 1f;
+	public int playerNo = 1;
+	public float speed = 5f;
+	public float acceleration = 2;
 	public float frictionConstant = .5f;
+	public int maxHitPoint = 100;
+	public int maxStamina = 100;
 
 	private Vector2 _velocity;
 	private float protectionTime;
 	private string hAxisName, vAxisName;
 	private Rigidbody2D _rigidbody;
+	private GUIManager _guiManager;
+	private int hitPoint;
+	private float stamina;
+	private bool boostAvailable;
 
 	void Start()
 	{
 		hAxisName = "Horizontal" + playerNo;
 		vAxisName = "Vertical" + playerNo;
 		_rigidbody = GetComponent<Rigidbody2D> ();
+		_guiManager = FindObjectOfType<Canvas> ().GetComponent<GUIManager> ();
+		hitPoint = maxHitPoint;
+		stamina = maxStamina;
 	}
 
 	void Update () {
 
-		if (protectionTime > 0)
+		if (protectionTime > 0) {
 			protectionTime -= Time.fixedDeltaTime;
+			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
+		}
+		else
+		{
+			GetComponentInChildren<SpriteRenderer> ().color = Color.white; // Return normal color after protection has gone
+		}
 
+		if (stamina > maxStamina )
+			stamina = maxStamina;
 		// Character Controls
 		Vector2 _direction = GetJoystickValue ();
-		_velocity = _direction * speed;
+		_velocity += _direction * acceleration;
+		if (Input.GetButton ("Fire" + playerNo) // Boost if fire button pressed
+			&& boostAvailable // and boost available
+			&& stamina > 0) { // till stamina depleted
 
-		if (_direction.x == 0f) {
-			_velocity.x *= 0.7f;
+			stamina -= 100 * Time.deltaTime;
+			_velocity += _direction * acceleration * 2;
+
+		} else {
+			stamina += 20 * Time.deltaTime;
+			if (stamina > maxStamina / 2) {
+				boostAvailable = true;
+			} else
+				boostAvailable = false;
 		}
-		if (_direction.y == 0f) {
-			_velocity.y *= 0.7f;
-		}
+		_velocity -= _velocity * frictionConstant;
+		Vector2.ClampMagnitude (_velocity, speed);
+		if (stamina < maxStamina)
+			Debug.Log (stamina);
 	}
 
 	void FixedUpdate() {
@@ -43,37 +72,31 @@ public class CupcakeController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (protectionTime > 0) {
-			// Debug.Log ("Immune");
-			GetComponentInChildren<SpriteRenderer> ().color = Color.red;
-		}
-		else if (other.transform.tag == "CUPCAKE") {
-			//protectionTime = 0.5f; // Protect character for continuous collisions
-			calculateDamage(other);
-		}
-		else
-		{
-			GetComponentInChildren<SpriteRenderer> ().color = Color.white; // Return normal color after protection has gone
+		if (protectionTime <= 0 && other.transform.tag == "CUPCAKE") {
+			hitPoint -= calculateDamage (other);
+			if (_guiManager != null)
+				_guiManager.hudController.updateHPBar(playerNo, hitPoint);
 		}
 	}
 
 	// Returns positive value on damage
-	private float calculateDamage (Collision2D other)
+	private int calculateDamage (Collision2D other)
 	{
 		Debug.DrawRay (other.contacts [0].point, other.contacts [0].normal, Color.red);
 
-		Rigidbody2D contactRigidbody = other.gameObject.GetComponent<Rigidbody2D> ();
-		/*
-		var impactVelocityX = _rigidbody.velocity.x - contactRigidbody.velocity.x;
-		impactVelocityX *= Mathf.Sign(impactVelocityX);
-		var impactVelocityY = _rigidbody.velocity.y - contactRigidbody.velocity.y;
-		impactVelocityY *= Mathf.Sign(impactVelocityY);
-		var impactVelocity = impactVelocityX + impactVelocityY;
-		var impactForce = impactVelocity * _rigidbody.mass * contactRigidbody.mass;
-		impactForce *= Mathf.Sign(impactForce);
-		*/
+//		Rigidbody2D contactRigidbody = other.gameObject.GetComponent<Rigidbody2D> ();
 
-		float damage = 0f;
+		if (other.rigidbody.velocity.magnitude > _rigidbody.velocity.magnitude) {
+			int hitDamage = Mathf.FloorToInt(other.rigidbody.velocity.magnitude - _rigidbody.velocity.magnitude);
+			protectionTime = 0.5f;
+			Debug.Log(string.Format("{0} received {1} damage!", gameObject.name, hitDamage));
+			return hitDamage;
+		} else {
+			return 0;
+		}
+			
+
+		/*
 		Vector3 enemyProjectionVector = Vector3.Project (contactRigidbody.velocity, other.contacts [0].normal);
 		Vector3 ourProjectionVector = Vector3.Project (_rigidbody.velocity, other.contacts [0].normal);
 		damage = enemyProjectionVector.magnitude - ourProjectionVector.magnitude;
@@ -82,7 +105,7 @@ public class CupcakeController : MonoBehaviour {
 			Debug.Log (this.gameObject.name + " received " + damage);
 			protectionTime = 0.5f;
 		}
-		return damage;
+		*/
 	}
 
 
