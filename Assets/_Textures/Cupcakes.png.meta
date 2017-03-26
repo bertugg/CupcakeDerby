@@ -25,6 +25,7 @@ TextureImporter:
     21300036: DamagedFace
     21300038: HealthyFace
     21300040: Pupils
+    21300042: CupcakeShadow
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,8 +87,8 @@ TextureImporter:
       name: Cupcake00
       rect:
         serializedVersion: 2
-        x: 209
-        y: 113
+        x: 515
+        y: 1918
         width: 102
         height: 129
       alignment: 0
@@ -99,8 +100,8 @@ TextureImporter:
       name: Cupcake01
       rect:
         serializedVersion: 2
-        x: 313
-        y: 128
+        x: 515
+        y: 1787
         width: 101
         height: 129
       alignment: 0
@@ -112,8 +113,8 @@ TextureImporter:
       name: Cupcake02
       rect:
         serializedVersion: 2
-        x: 1
-        y: 112
+        x: 296
+        y: 127
         width: 102
         height: 130
       alignment: 0
@@ -125,8 +126,8 @@ TextureImporter:
       name: Cupcake03
       rect:
         serializedVersion: 2
-        x: 105
-        y: 112
+        x: 400
+        y: 127
         width: 102
         height: 130
       alignment: 0
@@ -138,8 +139,8 @@ TextureImporter:
       name: Cupcake04
       rect:
         serializedVersion: 2
-        x: 416
-        y: 128
+        x: 618
+        y: 1787
         width: 101
         height: 129
       alignment: 0
@@ -265,6 +266,19 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
+      name: CupcakeShadow
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 99
+        width: 293
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: CupcakeStrawberry
       rect:
         serializedVersion: 2
@@ -308,7 +322,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 25
+        y: 12
         width: 102
         height: 85
       alignment: 0
@@ -321,7 +335,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 105
-        y: 25
+        y: 12
         width: 97
         height: 85
       alignment: 0

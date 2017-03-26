@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class PlayMusic : MonoBehaviour {
 
@@ -10,13 +11,18 @@ public class PlayMusic : MonoBehaviour {
 	public AudioClip gameMusic;						//Assign Audioclip for ingame
 	public AudioClip victoryMusic;					//Assign Audioclip for Victory 
 
+	public List<AudioClip> hitSound;
+	public AudioClip audienceSound;
+	public AudioClip teaDrop;
+
 	public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
 
 	[SerializeField]
 	private AudioSource musicSource;				//Reference to the AudioSource which plays music
+	[SerializeField]
+	private AudioSource soundSource;				//Reference to the AudioSource which plays music
 	private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
-
 
 	void Awake () 
 	{
@@ -74,7 +80,20 @@ public class PlayMusic : MonoBehaviour {
 		//Play the selected clip
 		musicSource.Play ();
 	}
-
+	public void PlaySelectedSound(SoundType soundType)
+	{
+		switch (soundType) {
+		case SoundType.Hit:
+			soundSource.clip = hitSound [Random.Range (0, hitSound.Count - 1)];
+			break;
+		case SoundType.Audience:
+			soundSource.clip = audienceSound;
+			break;
+		default:
+			break;
+		}
+		soundSource.Play ();
+	}
 	//Call this function to very quickly fade up the volume of master mixer
 	public void FadeUp(float fadeTime)
 	{

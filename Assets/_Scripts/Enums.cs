@@ -19,3 +19,9 @@ public enum MusicType
 	Game,
 	Victory
 }
+public enum SoundType
+{
+	Hit,
+	Victory,
+	Audience
+}

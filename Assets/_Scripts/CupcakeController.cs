@@ -11,15 +11,20 @@ public class CupcakeController : MonoBehaviour {
 	public int maxHitPoint = 100;
 	public int maxStamina = 100;
 
+	[HideInInspector]
+	public HPBarController _hpBar;
+	[HideInInspector]
+	public PlayMusic soundManager;
+
 	private Vector2 _velocity;
 	private float protectionTime;
 	private string hAxisName, vAxisName;
 	private Rigidbody2D _rigidbody;
-	public HPBarController _hpBar;
 	private int hitPoint;
 	private float stamina;
 	private bool boostAvailable;
 	private bool isAlive;
+	private Animator _animator;
 
 	void Start()
 	{
@@ -29,6 +34,7 @@ public class CupcakeController : MonoBehaviour {
 		hAxisName = "Horizontal" + playerNo;
 		vAxisName = "Vertical" + playerNo;
 		_rigidbody = GetComponent<Rigidbody2D> ();
+		_animator = GetComponent<Animator> ();
 
 	}
 
@@ -74,6 +80,7 @@ public class CupcakeController : MonoBehaviour {
 
 	void FixedUpdate() {
 		_rigidbody.velocity = _velocity; // Controlling Cupcake with stick
+		_animator.SetFloat("SpeedX",_rigidbody.velocity.x);
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -94,6 +101,7 @@ public class CupcakeController : MonoBehaviour {
 			_hpBar.UpdateHPBar(hitPoint);
 			if (hitPoint <= 0)
 				isAlive = false;
+			soundManager.PlaySelectedSound (SoundType.Hit);
 			return hitDamage;
 		} else {
 			return 0;

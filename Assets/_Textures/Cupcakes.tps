@@ -223,6 +223,7 @@
             <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnut.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnutLeft.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeHazelnutRight.png</key>
+            <key type="filename">../../Texturepacker/Ingame/CupcakeShadow.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberry.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberryLeft.png</key>
             <key type="filename">../../Texturepacker/Ingame/CupcakeStrawberryRight.png</key>

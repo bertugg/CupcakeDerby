@@ -24,6 +24,7 @@ public class GUIManager : MonoBehaviour {
 
 	public List<GameObject> cupcakes;
 
+
 	void Awake()
 	{
 		musicController = GetComponent<PlayMusic> ();
@@ -88,6 +89,7 @@ public class GUIManager : MonoBehaviour {
     public void OnPlayButton()
     {
 		Time.timeScale = 1f;
+		musicController.PlaySelectedSound (SoundType.Audience);
 		HidePanel (PanelType.MainMenu);
 		ShowPanel (PanelType.PlayerSelection);
     }
@@ -182,18 +184,22 @@ public class GUIManager : MonoBehaviour {
 				case 0: // Player 1 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2 (-4f, 1f), Quaternion.identity);
 					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
 					break;
 				case 1: // Player 2 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2(4f, 1f),Quaternion.identity);
 					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
 					break;
 				case 2: // Player 3 joined
 					cupCake = Instantiate (cupcakes [i], new Vector2(-4f, -1f),Quaternion.identity);
 					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
 					break;
 				case 3: // Player 4 joined
-					cupCake = Instantiate (cupcakes [i], new Vector2(4f, -1f),Quaternion.identity);
+					cupCake = Instantiate (cupcakes [i], new Vector2 (4f, -1f), Quaternion.identity);
 					cupCake.GetComponent<CupcakeController> ()._hpBar = hudController.hpBars [i];
+					cupCake.GetComponent<CupcakeController> ().soundManager = musicController;
 					break;
 				default:break;
 				}
