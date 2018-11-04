@@ -58,19 +58,19 @@ public class GUIManager : MonoBehaviour {
 	void Update()
 	{
 		if (PlayerSelectionPanel.gameObject.activeInHierarchy) {
-			if (Input.GetKeyUp(KeyCode.Alpha1)) {
+			if (Input.GetButton("Fire1")) {
 				playerSelectionScript.PlayerJoined (1);
 			}	
 
-			else if (Input.GetKeyUp(KeyCode.Alpha2)) {
+			else if (Input.GetButton("Fire2")) {
 				playerSelectionScript.PlayerJoined (2);
 			}
 
-			else if (Input.GetKeyUp(KeyCode.Alpha3)) {
+			else if (Input.GetButton("Fire3")) {
 				playerSelectionScript.PlayerJoined (3);
 			}
 
-			else if (Input.GetKeyUp(KeyCode.Alpha4)) {
+			else if (Input.GetButton("Fire4")) {
 				playerSelectionScript.PlayerJoined (4);
 			}
 			else if (Input.GetButton("Start1") || Input.GetButton("Start2")) 

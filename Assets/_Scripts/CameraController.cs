@@ -71,7 +71,6 @@ public class CameraController : MonoBehaviour {
 	{
 		float elapsedTime = 0;
 		float zoomedValue = (_camera.orthographicSize + (originalCameraZoomValue * -zoomPercent / 100)); // For a fixed zooming in/out effect, percentage taken from originalCameraZoomValue. ((%80 x) %120 != x)
-        
         while (elapsedTime < time)
 		{
 			_camera.orthographicSize = Mathf.Lerp (_camera.orthographicSize, zoomedValue, elapsedTime / time);
